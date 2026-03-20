@@ -1,0 +1,18 @@
+/* home container */
+.home-container {
+    background-color: black;
+    height: 100vh;/* full viewport height*/
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;/*center horizontally*/
+    align-items: center;/*center vertically*/
+    text-align: center;
+}
+
+/* name styling */
+.home-container h1{
+    font-size: 60px;
+    font-weight: bold;
+    margin: 0;
+}
