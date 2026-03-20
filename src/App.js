@@ -1,12 +1,13 @@
 import React from "react";
 import Navbar from "./navbar";
+import Home from "./home";
 
 function App() {
   return (
     <div>
       <Navbar />
-        <h2>Welcome to my portfolio</h2>
-      
+      <Home />
+
     </div>
   );
 }
