@@ -1,4 +1,5 @@
 import React from "react";
+import "./technologies.css"
 
 import pythonLogo from "./assets/Python_logo.jpeg";
 import djangoLogo from "./assets/django_logo.png"
@@ -12,17 +13,46 @@ import mongoLogo from "./assets/mongo_logo.png";
 
 const Technologies = () => {
     return(
-        <div>
+        <div className="tech-container" id="technologies">
             <h2>Technologies</h2>
-            <img src={pythonLogo} alt="Python" />
-            <img src={djangoLogo} alt="Django" />
-            <img src={reactLogo} alt="React" />
-            <img src={nodeLogo} alt="Node" />
-            <img src={gitLogo} alt="Git" />
-            <img src={cLogo} alt="C" />
-            <img src={cplusLogo} alt="C++" />
-            <img src={postgresLogo} alt="PostgreSQL" />
-            <img src={mongoLogo} alt="MongoDB" />
+            <div className="tech-grid">
+                <div className="tech-item">
+                    <img src={pythonLogo} alt="Python" />
+                </div>
+                    
+                <div className="tech-item">
+                    <img src={djangoLogo} alt="Django" />
+                </div>
+                    
+                <div className="tech-item">
+                    <img src={reactLogo} alt="React" />
+                </div>
+                    
+                <div className="tech-item">
+                    <img src={nodeLogo} alt="Node" />
+                </div>
+                    
+                <div className="tech-item">
+                    <img src={gitLogo} alt="Git" />
+                </div>
+                    
+                <div className="tech-item">
+                    <img src={cLogo} alt="C" />
+                </div>
+                    
+                <div className="tech-item">
+                    <img src={cplusLogo} alt="C++" />
+                </div>
+                    
+                <div className="tech-item">
+                    <img src={postgresLogo} alt="PostgreSQL" />
+                </div>
+                    
+                <div className="tech-item">
+                    <img src={mongoLogo} alt="MongoDB" />
+
+                </div>
+            </div>
         </div>
 
     )

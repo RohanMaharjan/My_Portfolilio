@@ -1,0 +1,43 @@
+.tech-container {
+  padding: 50px;
+  text-align: center;
+  background-color: #111;
+  color: white;
+}
+
+.tech-container h2 {
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+/* GRID: 3 items per row */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Each item */
+.tech-item {
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.tech-item:hover {
+  transform: scale(1.05);
+}
+
+/* Logo */
+.tech-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.tech-item p {
+  margin: 0;
+  font-size: 16px;
+}
