@@ -69,3 +69,20 @@
   margin-right: 8px;
   color: #336fe7;
 }
+
+.social-icons {
+  display: flex;
+  justify-content: center;   /* align middle */
+  gap: 20px;                 /* spacing between icons */
+  margin-top: 35px;
+}
+
+.social-icons a {
+  font-size: 24px;           /* icon size */
+  color: #336fe7;            /* default color */
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #2855b6;            /* hover color */
+}

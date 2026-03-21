@@ -50,14 +50,15 @@ const Contact = () => {
                     <li>
                         <FontAwesomeIcon icon={faMapMarkerAlt} /><strong>Location:</strong>Harisiddhi-28, Lalitpur
                     </li>
-                    <li>
+                    
+                    <li className="social-icons">
                         <a href="https://github.com/RohanMaharjan" target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faGithub} />
                         </a>
                         <a href="https://linkedin.com/in/rohan-maharjan-09404827" target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faLinkedin} />
                         </a>
-                        <a href="https://instagram.com/rohan-mh" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.instagram.com/rohan_mhj/" target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faInstagram} />
                         </a>
                     </li>
