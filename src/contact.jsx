@@ -1,6 +1,8 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faEnvelope, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faEnvelope, faMapMarkerAlt} from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+
 import "./contact.css"
 
 const handleSubmit = async (e) => {
@@ -47,6 +49,11 @@ const Contact = () => {
                     </li>
                     <li>
                         <FontAwesomeIcon icon={faMapMarkerAlt} /><strong>Location:</strong>Harisiddhi-28, Lalitpur
+                    </li>
+                    <li>
+                        <a href="https://github.com/RohanMaharjan" target="_blank" rel="noopener noreferrer">
+                            <FontAwesomeIcon icon={faGithub} />
+                        </a>
                     </li>
                 </ul>
             </div>
