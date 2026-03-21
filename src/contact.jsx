@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope, faMapMarkerAlt} from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 import "./contact.css"
 
@@ -56,6 +56,9 @@ const Contact = () => {
                         </a>
                         <a href="https://linkedin.com/in/rohan-maharjan-09404827" target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faLinkedin} />
+                        </a>
+                        <a href="https://instagram.com/rohan-mh" target="_blank" rel="noopener noreferrer">
+                            <FontAwesomeIcon icon={faInstagram} />
                         </a>
                     </li>
                 </ul>
