@@ -4,7 +4,7 @@ import "./home.css";
 //component declaration for home
 const Home = () => {
     return (
-        <div className="home-container">
+        <div className="home-container" id="home">
             <h1>I'M ROHAN MAHARJAN</h1>
         </div>
         

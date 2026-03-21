@@ -14,12 +14,12 @@
 .tech-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 50px;
 }
 
 /* Each item */
 .tech-item {
-  background-color: #1e1e1e;
+  background-color: #bbd4ad;
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.3s;

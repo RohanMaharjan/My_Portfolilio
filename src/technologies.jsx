@@ -13,7 +13,7 @@ import mongoLogo from "./assets/mongo_logo.png";
 
 const Technologies = () => {
     return(
-        <div className="tech-container" id="technologies">
+        <div className="tech-container" id="tech">
             <h2>Technologies</h2>
             <div className="tech-grid">
                 <div className="tech-item">
