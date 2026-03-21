@@ -1,6 +1,8 @@
 import React from "react";
 import profilePic from "./profile.jpg"//image file
 import "./about.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBookOpen } from "@fortawesome/free-solid-svg-icons";
 
 const About = () => {
     return(
@@ -37,7 +39,23 @@ const About = () => {
                     My focus is on developing scalable and efficient solutions while continuously
                     improving my skills.
                 </p>
-        </div>
+                {/* Education heading with book icon */}
+                <h2><FontAwesomeIcon icon={faBookOpen} /> Education</h2>
+                <ul style={{listStyleType: 'square', fontSize: '1.25rem'}}>
+                    <li style={{fontWeight: 'bold'}}>2021-Present</li>
+                        <div className="paragraph">
+                            <p>Bachelor's of Computer Engineering<br/>Khwopa Engineering College <br />Libali-08, Bhaktapur</p>
+                        </div>
+                    <li style={{fontWeight: 'bold'}}>2019-2021</li>
+                        <div className="paragraph">
+                            <p>Higher Studies in +2 Science<br/>St. Xavier's School <br />Jawalakhel, Lalitpur</p>
+                        </div>
+                    <li style={{fontWeight: 'bold'}}>2009-2019</li>
+                        <div className="paragraph">
+                            <p>Secondary Level (SEE)<br/>Prerana Vidhyasram School <br />Harisiddhi, Lalitpur</p>
+                        </div>
+                </ul>
+            </div>
         </div>
 
         
