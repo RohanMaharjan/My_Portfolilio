@@ -3,6 +3,34 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import "./contact.css"
 
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const formData = {
+    name: e.target[0].value,
+    email: e.target[1].value,
+    message: e.target[2].value,
+  };
+
+  try {
+    const response = await fetch("http://localhost:5000/send", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await response.json();
+    if (result.success) {
+      alert("Message sent successfully!");
+    } else {
+      alert("Failed to send message.");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Error sending message.");
+  }
+};
+
 const Contact = () => {
     return(
         <div className="contact-container" id="contact">
@@ -25,7 +53,7 @@ const Contact = () => {
 
             <div className="contact-right">
                 <h2>Message Me</h2>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <input type="text" placeholder="Enter Name" required />
                     <input type="email" placeholder="Enter Email" required />
                     <textarea placeholder="Write Message" rows='5' required ></textarea>
