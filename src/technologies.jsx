@@ -17,39 +17,57 @@ const Technologies = () => {
             <h2>Technologies</h2>
             <div className="tech-grid">
                 <div className="tech-item">
-                    <img src={pythonLogo} alt="Python" />
+                    <a href="#python">
+                        <img src={pythonLogo} alt="Python" />
+                    </a>
                 </div>
                     
                 <div className="tech-item">
-                    <img src={djangoLogo} alt="Django" />
+                    <a href="#django">
+                        <img src={djangoLogo} alt="Django" />
+                    </a>
                 </div>
                     
                 <div className="tech-item">
-                    <img src={reactLogo} alt="React" />
+                    <a href="#react">
+                        <img src={reactLogo} alt="React" />
+                    </a>                  
                 </div>
                     
                 <div className="tech-item">
-                    <img src={nodeLogo} alt="Node" />
+                    <a href="#node">
+                        <img src={nodeLogo} alt="Node" />
+                    </a>
                 </div>
                     
                 <div className="tech-item">
-                    <img src={gitLogo} alt="Git" />
+                    <a href="github">
+                        <img src={gitLogo} alt="Git" />
+                    </a>
                 </div>
                     
                 <div className="tech-item">
-                    <img src={cLogo} alt="C" />
+                    <a href="#c">
+                        <img src={cLogo} alt="C" />
+                    </a>
                 </div>
                     
                 <div className="tech-item">
-                    <img src={cplusLogo} alt="C++" />
+                    <a href="cplusplus">
+                        <img src={cplusLogo} alt="C++" />
+                    </a>
                 </div>
                     
                 <div className="tech-item">
-                    <img src={postgresLogo} alt="PostgreSQL" />
+                    <a href="#postgres">
+                        <img src={postgresLogo} alt="PostgreSQL" />
+                    </a>
                 </div>
                     
                 <div className="tech-item">
-                    <img src={mongoLogo} alt="MongoDB" />
+                    <a href="#mongo">
+                        <img src={mongoLogo} alt="MongoDB" />
+                    </a>
 
                 </div>
             </div>

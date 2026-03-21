@@ -17,12 +17,10 @@
   gap: 50px;
 }
 
-/* Each item */
-.tech-item {
-  background-color: #bbd4ad;
-  padding: 20px;
-  border-radius: 10px;
-  transition: transform 0.3s;
+.tech-item a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .tech-item:hover {
