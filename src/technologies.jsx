@@ -1,8 +1,9 @@
 import React from "react";
-import "./technologies.css"
+import "./technologies.css";
+import { Link } from "react-router-dom";
 
 import pythonLogo from "./assets/Python_logo.jpeg";
-import djangoLogo from "./assets/django_logo.png"
+import djangoLogo from "./assets/django_logo.png";
 import reactLogo from "./assets/React_logo.png";
 import nodeLogo from "./assets/node_logo.png";
 import gitLogo from "./assets/git_logo.png";
@@ -12,68 +13,66 @@ import postgresLogo from "./assets/postgres_logo.png";
 import mongoLogo from "./assets/mongo_logo.png";
 
 const Technologies = () => {
-    return(
+    return (
         <div className="tech-container" id="tech">
             <h2>Technologies</h2>
             <div className="tech-grid">
                 <div className="tech-item">
-                    <a href="#python">
+                    <Link to="/python">
                         <img src={pythonLogo} alt="Python" />
-                    </a>
+                    </Link>
                 </div>
-                    
-                <div className="tech-item">
-                    <a href="#django">
-                        <img src={djangoLogo} alt="Django" />
-                    </a>
-                </div>
-                    
-                <div className="tech-item">
-                    <a href="#react">
-                        <img src={reactLogo} alt="React" />
-                    </a>                  
-                </div>
-                    
-                <div className="tech-item">
-                    <a href="#node">
-                        <img src={nodeLogo} alt="Node" />
-                    </a>
-                </div>
-                    
-                <div className="tech-item">
-                    <a href="github">
-                        <img src={gitLogo} alt="Git" />
-                    </a>
-                </div>
-                    
-                <div className="tech-item">
-                    <a href="#c">
-                        <img src={cLogo} alt="C" />
-                    </a>
-                </div>
-                    
-                <div className="tech-item">
-                    <a href="cplusplus">
-                        <img src={cplusLogo} alt="C++" />
-                    </a>
-                </div>
-                    
-                <div className="tech-item">
-                    <a href="#postgres">
-                        <img src={postgresLogo} alt="PostgreSQL" />
-                    </a>
-                </div>
-                    
-                <div className="tech-item">
-                    <a href="#mongo">
-                        <img src={mongoLogo} alt="MongoDB" />
-                    </a>
 
+                <div className="tech-item">
+                    <Link to="/django">
+                        <img src={djangoLogo} alt="Django" />
+                    </Link>
+                </div>
+
+                <div className="tech-item">
+                    <Link to="/react">
+                        <img src={reactLogo} alt="React" />
+                    </Link>
+                </div>
+
+                <div className="tech-item">
+                    <Link to="/node">
+                        <img src={nodeLogo} alt="Node" />
+                    </Link>
+                </div>
+
+                <div className="tech-item">
+                    <Link to="/git">
+                        <img src={gitLogo} alt="Git" />
+                    </Link>
+                </div>
+
+                <div className="tech-item">
+                    <Link to="/c">
+                        <img src={cLogo} alt="C" />
+                    </Link>
+                </div>
+
+                <div className="tech-item">
+                    <Link to="/cplusplus">
+                        <img src={cplusLogo} alt="C++" />
+                    </Link>
+                </div>
+
+                <div className="tech-item">
+                    <Link to="/postgres">
+                        <img src={postgresLogo} alt="PostgreSQL" />
+                    </Link>
+                </div>
+
+                <div className="tech-item">
+                    <Link to="/mongo">
+                        <img src={mongoLogo} alt="MongoDB" />
+                    </Link>
                 </div>
             </div>
         </div>
-
-    )
-}
+    );
+};
 
 export default Technologies;
