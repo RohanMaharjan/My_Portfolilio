@@ -19,6 +19,16 @@ const Contact = () => {
                     <FontAwesomeIcon icon={faMapMarkerAlt} /><strong>Location:</strong>Harisiddhi-28, Lalitpur
                 </li>
             </ul>
+            <div>
+                <h2>Message Me</h2>
+                <form>
+                    <input type="text" placeholder="Enter Name" required />
+                    <input type="email" placeholder="Enter Email" required />
+                    <textarea placeholder="Write Message" rows='5' required ></textarea>
+                    <button type="submit">SEND</button>
+                </form>
+            </div>
+
         </div>
     )
 }
