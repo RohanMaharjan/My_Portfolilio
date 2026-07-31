@@ -1,34 +1,104 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./navbar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
-//component declaration
+const SECTION_LINKS = [
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#tech", label: "Skills" },
+  { href: "#projects", label: "Projects" },
+  { href: "#achievements", label: "Achievements" },
+  { href: "#contact", label: "Contact" },
+];
+
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const onHome = location.pathname === "/";
 
-    const [menuOpen, setMenuOpen] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-    return(
-        <nav className="navbar">
-            <div className="navbar-left">
-                <h1>My Portfolio</h1>
-            </div>
+  return (
+    <nav className={`navbar ${scrolled || !onHome ? "scrolled" : ""}`}>
+      <div className="navbar-inner">
+        {onHome ? (
+          <a href="#home" className="navbar-brand" onClick={() => setMenuOpen(false)}>
+            <span className="brand-mark">RM</span>
+            <span className="brand-name">Rohan Maharjan</span>
+          </a>
+        ) : (
+          <Link to="/" className="navbar-brand" onClick={() => setMenuOpen(false)}>
+            <FontAwesomeIcon icon={faArrowLeft} className="brand-back-icon" />
+            <span className="brand-mark">RM</span>
+            <span className="brand-name">Rohan Maharjan</span>
+          </Link>
+        )}
 
-            {/* hamburger icon */}
-            <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
-                ☰
-            </div>
+        <button
+          className={`menu-icon ${menuOpen ? "open" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-            <div className={`navbar-right ${menuOpen ? "active" : ""}`}>
-                <ul className="nav-links">
-                    <li><a href="#home" onClick={() => setMenuOpen(false)}>Home</a></li>
-                    <li><a href="#about" onClick={() => setMenuOpen(false)}>About</a></li>
-                    <li><a href="#tech" onClick={() => setMenuOpen(false)}>Technology</a></li>
-                    <li><a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a></li>
-                    <li><a href="#achievements" onClick={() => setMenuOpen(false)}>Achievements</a></li>
-                    <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact Me</a></li>
-                </ul>
-            </div>
-        </nav>
-    );
+        <div className={`navbar-right ${menuOpen ? "active" : ""}`}>
+          <ul className="nav-links">
+            {SECTION_LINKS.map((link) =>
+              onHome ? (
+                <li key={link.href}>
+                  <a href={link.href} onClick={() => setMenuOpen(false)}>
+                    {link.label}
+                  </a>
+                </li>
+              ) : (
+                <li key={link.href}>
+                  <Link to={`/${link.href}`} onClick={() => setMenuOpen(false)}>
+                    {link.label}
+                  </Link>
+                </li>
+              )
+            )}
+            <li>
+              <Link
+                to="/resume"
+                className={location.pathname === "/resume" ? "nav-link-active" : ""}
+                onClick={() => setMenuOpen(false)}
+              >
+                Resume
+              </Link>
+            </li>
+          </ul>
+          {onHome ? (
+            <a
+              href="#contact"
+              className="btn btn-primary nav-cta"
+              onClick={() => setMenuOpen(false)}
+            >
+              Let's Talk
+            </a>
+          ) : (
+            <Link
+              to="/#contact"
+              className="btn btn-primary nav-cta"
+              onClick={() => setMenuOpen(false)}
+            >
+              Let's Talk
+            </Link>
+          )}
+        </div>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;
