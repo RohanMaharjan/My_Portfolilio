@@ -1,88 +1,96 @@
-.contact-container {
-  display: flex;
-  flex-wrap: wrap;              /* responsive */
-  justify-content: space-between;
-  padding: 40px;
-  background-color: #f8f7df;
+.contact-container { color: var(--text); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 28px;
 }
 
-.contact-container h1 {
-  width: 100%;                  /* span full width */
-  text-align: center;            /* center horizontally */
-  margin-bottom: 30px;           /* spacing below heading */
-  color: #336fe7;
-}
-
-.contact-left, .contact-right {
-  flex: 1;
-  margin: 20px;
-  padding: 20px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.contact-left h2, .contact-right h2 {
-  margin-bottom: 20px;
-  color: #336fe7;
-}
-
-.contact-right form {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-right input,
-.contact-right textarea {
-  margin-bottom: 15px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.contact-right button {
-  background-color: #336fe7;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.contact-right button:hover {
-  background-color: #2855b6;
-}
+.contact-left, .contact-right { padding: 36px; }
+.contact-left h3, .contact-right h3 { font-size: 20px; margin-bottom: 26px; }
 
 .contact-left ul {
-  list-style-type: none;   /* removes bullets */
+  list-style: none;
   padding: 0;
-  margin: 0;
-}
-
-.contact-left li {
-  margin-bottom: 12px;
+  margin: 0 0 30px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.contact-left li svg {
-  margin-right: 8px;
-  color: #336fe7;
+.contact-left li { display: flex; align-items: flex-start; gap: 14px; }
+
+.contact-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--accent-2);
+  font-size: 16px;
 }
 
-.social-icons {
-  display: flex;
-  justify-content: center;   /* align middle */
-  gap: 20px;                 /* spacing between icons */
-  margin-top: 35px;
+.contact-left li strong {
+  display: block;
+  font-size: 13px;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
 }
+
+.contact-left li p { margin: 0; color: var(--text); font-size: 15px; }
+
+.social-icons { display: flex; gap: 14px; padding-top: 22px; border-top: 1px solid var(--border); }
 
 .social-icons a {
-  font-size: 24px;           /* icon size */
-  color: #336fe7;            /* default color */
-  transition: color 0.3s ease;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 16px;
+  transition: var(--transition);
+}
+.social-icons a:hover { color: var(--text); border-color: var(--accent); transform: translateY(-3px); }
+
+.contact-right form { display: flex; flex-direction: column; gap: 16px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.contact-right input, .contact-right textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  transition: var(--transition);
 }
 
-.social-icons a:hover {
-  color: #2855b6;            /* hover color */
+.contact-right input::placeholder, .contact-right textarea::placeholder { color: var(--text-faint); }
+
+.contact-right input:focus, .contact-right textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(124, 92, 255, 0.06);
+}
+
+.contact-right textarea { resize: vertical; }
+.contact-right button { align-self: flex-start; border: none; }
+.contact-right button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.form-status { font-size: 14px; margin: 0; }
+.form-status.success { color: #34d399; }
+.form-status.error { color: #f87171; }
+
+@media (max-width: 860px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
 }

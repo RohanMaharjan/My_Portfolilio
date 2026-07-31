@@ -1,34 +1,65 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./navbar.css";
 
-//component declaration
+const NAV_LINKS = [
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#tech", label: "Skills" },
+  { href: "#projects", label: "Projects" },
+  { href: "#achievements", label: "Achievements" },
+  { href: "#contact", label: "Contact" },
+];
+
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-    const [menuOpen, setMenuOpen] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-    return(
-        <nav className="navbar">
-            <div className="navbar-left">
-                <h1>My Portfolio</h1>
-            </div>
+  return (
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+      <div className="navbar-inner">
+        <a href="#home" className="navbar-brand" onClick={() => setMenuOpen(false)}>
+          <span className="brand-mark">RM</span>
+          <span className="brand-name">Rohan Maharjan</span>
+        </a>
 
-            {/* hamburger icon */}
-            <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
-                ☰
-            </div>
+        <button
+          className={`menu-icon ${menuOpen ? "open" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-            <div className={`navbar-right ${menuOpen ? "active" : ""}`}>
-                <ul className="nav-links">
-                    <li><a href="#home" onClick={() => setMenuOpen(false)}>Home</a></li>
-                    <li><a href="#about" onClick={() => setMenuOpen(false)}>About</a></li>
-                    <li><a href="#tech" onClick={() => setMenuOpen(false)}>Technology</a></li>
-                    <li><a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a></li>
-                    <li><a href="#achievements" onClick={() => setMenuOpen(false)}>Achievements</a></li>
-                    <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact Me</a></li>
-                </ul>
-            </div>
-        </nav>
-    );
+        <div className={`navbar-right ${menuOpen ? "active" : ""}`}>
+          <ul className="nav-links">
+            {NAV_LINKS.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} onClick={() => setMenuOpen(false)}>
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href="#contact"
+            className="btn btn-primary nav-cta"
+            onClick={() => setMenuOpen(false)}
+          >
+            Let's Talk
+          </a>
+        </div>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;
