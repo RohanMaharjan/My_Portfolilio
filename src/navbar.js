@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./navbar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
-const NAV_LINKS = [
+const SECTION_LINKS = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#tech", label: "Skills" },
@@ -13,6 +16,8 @@ const NAV_LINKS = [
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const onHome = location.pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -21,12 +26,20 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+    <nav className={`navbar ${scrolled || !onHome ? "scrolled" : ""}`}>
       <div className="navbar-inner">
-        <a href="#home" className="navbar-brand" onClick={() => setMenuOpen(false)}>
-          <span className="brand-mark">RM</span>
-          <span className="brand-name">Rohan Maharjan</span>
-        </a>
+        {onHome ? (
+          <a href="#home" className="navbar-brand" onClick={() => setMenuOpen(false)}>
+            <span className="brand-mark">RM</span>
+            <span className="brand-name">Rohan Maharjan</span>
+          </a>
+        ) : (
+          <Link to="/" className="navbar-brand" onClick={() => setMenuOpen(false)}>
+            <FontAwesomeIcon icon={faArrowLeft} className="brand-back-icon" />
+            <span className="brand-mark">RM</span>
+            <span className="brand-name">Rohan Maharjan</span>
+          </Link>
+        )}
 
         <button
           className={`menu-icon ${menuOpen ? "open" : ""}`}
@@ -40,22 +53,48 @@ const Navbar = () => {
 
         <div className={`navbar-right ${menuOpen ? "active" : ""}`}>
           <ul className="nav-links">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <a href={link.href} onClick={() => setMenuOpen(false)}>
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            {SECTION_LINKS.map((link) =>
+              onHome ? (
+                <li key={link.href}>
+                  <a href={link.href} onClick={() => setMenuOpen(false)}>
+                    {link.label}
+                  </a>
+                </li>
+              ) : (
+                <li key={link.href}>
+                  <Link to={`/${link.href}`} onClick={() => setMenuOpen(false)}>
+                    {link.label}
+                  </Link>
+                </li>
+              )
+            )}
+            <li>
+              <Link
+                to="/resume"
+                className={location.pathname === "/resume" ? "nav-link-active" : ""}
+                onClick={() => setMenuOpen(false)}
+              >
+                Resume
+              </Link>
+            </li>
           </ul>
-
-          <a
-            href="#contact"
-            className="btn btn-primary nav-cta"
-            onClick={() => setMenuOpen(false)}
-          >
-            Let's Talk
-          </a>
+          {onHome ? (
+            <a
+              href="#contact"
+              className="btn btn-primary nav-cta"
+              onClick={() => setMenuOpen(false)}
+            >
+              Let's Talk
+            </a>
+          ) : (
+            <Link
+              to="/#contact"
+              className="btn btn-primary nav-cta"
+              onClick={() => setMenuOpen(false)}
+            >
+              Let's Talk
+            </Link>
+          )}
         </div>
       </div>
     </nav>

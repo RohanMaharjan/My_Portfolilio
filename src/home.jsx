@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./home.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown, faFileArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { faArrowDown, faFileLines } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const Home = () => {
@@ -42,9 +43,9 @@ const Home = () => {
           <a href="#projects" className="btn btn-primary">
             View My Work
           </a>
-          <a href="#contact" className="btn btn-outline">
-            <FontAwesomeIcon icon={faFileArrowDown} /> Get In Touch
-          </a>
+          <Link to="/resume" className="btn btn-outline">
+            <FontAwesomeIcon icon={faFileLines} /> View Resume
+          </Link>
         </div>
 
         <div className="hero-socials reveal reveal-delay-4">

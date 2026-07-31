@@ -33,6 +33,16 @@
   color: var(--text);
 }
 
+.brand-back-icon {
+  font-size: 14px;
+  color: var(--text-dim);
+  transition: var(--transition);
+}
+
+.navbar-brand:hover .brand-back-icon {
+  color: var(--accent-2);
+  transform: translateX(-3px);
+}
 .brand-mark {
   display: grid;
   place-items: center;
@@ -90,6 +100,13 @@
 
 .nav-links li a:hover { color: var(--text); }
 .nav-links li a:hover::after { width: 100%; }
+
+.nav-link-active {
+  color: var(--text) !important;
+}
+.nav-link-active::after {
+  width: 100% !important;
+}
 
 .nav-cta { padding: 10px 22px; font-size: 14px; }
 
