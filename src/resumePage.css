@@ -10,5 +10,5 @@
   min-height: calc(100vh - 82px);
   border: none;
   display: block;
-  background: #525659;
+  background: var(--pdf-bg);
 }
