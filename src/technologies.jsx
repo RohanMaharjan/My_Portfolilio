@@ -1,15 +1,15 @@
 import React from "react";
 import "./technologies.css";
 
-import pythonLogo from "./assets/Python_logo.jpeg";
-import djangoLogo from "./assets/django_logo.png";
-import reactLogo from "./assets/React_logo.png";
-import nodeLogo from "./assets/node_logo.png";
-import gitLogo from "./assets/git_logo.png";
-import cLogo from "./assets/c_logo.png";
-import cplusLogo from "./assets/c++_logo.png";
-import postgresLogo from "./assets/postgres_logo.png";
-import mongoLogo from "./assets/mongo_logo.png";
+import pythonLogo from "./assets/technologies/Python_logo.jpeg";
+import djangoLogo from "./assets/technologies/django_logo.png";
+import reactLogo from "./assets/technologies/React_logo.png";
+import nodeLogo from "./assets/technologies/node_logo.png";
+import gitLogo from "./assets/technologies/git_logo.png";
+import cLogo from "./assets/technologies/c_logo.png";
+import cplusLogo from "./assets/technologies/c++_logo.png";
+import postgresLogo from "./assets/technologies/postgres_logo.png";
+import mongoLogo from "./assets/technologies/mongo_logo.png";
 
 const techs = [
   { src: pythonLogo, name: "Python" },
