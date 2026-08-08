@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./achievements.css";
-import hult from "./assets/hult.jpg";
-import aws from "./assets/aws.jpg";
-import lumivya from "./assets/lumivya.png";
+import hult from "./assets/achievements/hult.jpg";
+import aws from "./assets/achievements/aws.jpg";
+import lumivya from "./assets/achievements/lumivya.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExpand, faAward } from "@fortawesome/free-solid-svg-icons";
 
